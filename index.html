@@ -383,6 +383,43 @@
   .g-melhoria .area li::before { background: var(--melhoria); }
   .g-correcao .area li::before { background: var(--correcao); }
 
+  /* ---------- Registro inicial ---------- */
+
+  .nota {
+    max-width: var(--measure);
+    border-left: 2px solid var(--rule);
+    padding-left: 22px;
+  }
+
+  .nota p { margin: 0 0 14px; color: var(--ink-soft); }
+
+  .nota ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+  }
+
+  .nota li {
+    position: relative;
+    padding-left: 20px;
+    color: var(--ink-soft);
+  }
+
+  .nota li::before {
+    content: "";
+    position: absolute;
+    left: 2px;
+    top: 11px;
+    width: 6px;
+    height: 1px;
+    background: var(--muted);
+  }
+
+  .nota strong { color: var(--ink); font-weight: 600; }
+
   /* ---------- Rodapé ---------- */
 
   .rodape {
@@ -426,7 +463,7 @@
   <header class="masthead">
     <p class="produto">SGVP · Sistema de Gestão de Votação e Plenário</p>
     <h1>Notas de Versão</h1>
-    <p class="sub">2 edições publicadas<br>Atualizado em 18 de setembro de 2026</p>
+    <p class="sub">11 edições publicadas<br>Atualizado em 18 de setembro de 2026</p>
   </header>
 
   <div class="layout">
@@ -441,9 +478,63 @@
           </a>
         </li>
         <li>
+          <a href="#v2-12-0">
+            <span class="v">V. 2.12.0</span>
+            <span class="d">4 set 2026</span>
+          </a>
+        </li>
+        <li>
+          <a href="#v2-11-0">
+            <span class="v">V. 2.11.0</span>
+            <span class="d">2 set 2026</span>
+          </a>
+        </li>
+        <li>
+          <a href="#v2-9-0">
+            <span class="v">V. 2.9.0</span>
+            <span class="d">1 set 2026</span>
+          </a>
+        </li>
+        <li>
+          <a href="#v2-8-0">
+            <span class="v">V. 2.8.0</span>
+            <span class="d">20 ago 2026</span>
+          </a>
+        </li>
+        <li>
+          <a href="#v2-6-1">
+            <span class="v">V. 2.6.1</span>
+            <span class="d">18 ago 2026</span>
+          </a>
+        </li>
+        <li>
+          <a href="#v2-5-0">
+            <span class="v">V. 2.5.0</span>
+            <span class="d">17 ago 2026</span>
+          </a>
+        </li>
+        <li>
+          <a href="#v2-3-0">
+            <span class="v">V. 2.3.0</span>
+            <span class="d">10 ago 2026</span>
+          </a>
+        </li>
+        <li>
+          <a href="#v2-2-0">
+            <span class="v">V. 2.2.0</span>
+            <span class="d">8 ago 2026</span>
+          </a>
+        </li>
+        <li>
           <a href="#v2-1-0">
             <span class="v">V. 2.1.0</span>
             <span class="d">3 ago 2026</span>
+          </a>
+        </li>
+        <li>
+          <a href="#inicial">
+            <span class="v">Inicial</span>
+            <span class="d">até ago 2026</span>
           </a>
         </li>
       </ol>
@@ -451,7 +542,6 @@
 
     <main>
 
-      <!-- ============ V.2.13.0 ============ -->
       <article class="release" id="v2-13-0">
         <header class="release-head">
           <p class="eyebrow">
@@ -462,46 +552,13 @@
           <dl class="ficha">
             <div><dt>Painel</dt><dd>v2.13.0</dd></div>
             <div><dt>Serviço</dt><dd>v0.13.0</dd></div>
-            <div><dt>Itens</dt><dd>56</dd></div>
+            <div><dt>Itens</dt><dd>16</dd></div>
           </dl>
         </header>
 
         <section class="grupo g-novo">
           <div class="grupo-titulo">
-            <h3>Novidades</h3><span class="linha"></span><span class="conta">30</span>
-          </div>
-
-          <div class="area">
-            <h4>Atas e transcrição</h4>
-            <ul>
-              <li>Geração automática da ata da sessão a partir da transcrição do áudio.</li>
-              <li>Modelo de ata configurável por câmara, com vocabulário próprio, modo de fala, delimitação da tribuna, capa e arte do cabeçalho.</li>
-              <li>Reconstrução da discussão das matérias a partir da transcrição, com vinculação às matérias da pauta.</li>
-              <li>Pré-visualização da ata na própria tela, com marcações de negrito, itálico e sublinhado.</li>
-              <li>Emissão do PDF oficial da ata.</li>
-              <li>Regeração da ata, passando a valer como texto vigente da sessão.</li>
-            </ul>
-          </div>
-
-          <div class="area">
-            <h4>Acesso e identificação</h4>
-            <ul>
-              <li>Login por biometria facial e digital em celular e tablet.</li>
-              <li>Pré-identificação por CPF no fluxo de biometria.</li>
-              <li>Conferência da senha do certificado digital antes do salvamento.</li>
-              <li>Senha de implantação com troca obrigatória no primeiro acesso.</li>
-            </ul>
-          </div>
-
-          <div class="area">
-            <h4>Tela do operador</h4>
-            <ul>
-              <li>Reformulação da tela no novo padrão visual.</li>
-              <li>Aplicação de modo espectador conforme o perfil de acesso.</li>
-              <li>Atualização em tempo real da tela, sem necessidade de recarregamento.</li>
-              <li>Votação em bloco.</li>
-              <li>Reordenação dos documentos da pauta por arrastar.</li>
-            </ul>
+            <h3>Novidades</h3><span class="linha"></span><span class="conta">7</span>
           </div>
 
           <div class="area">
@@ -509,26 +566,7 @@
             <ul>
               <li>Envio de múltiplos PDFs por documento.</li>
               <li>Envio de arquivos diretamente ao armazenamento, com barra de progresso por arquivo.</li>
-              <li>Gestão individual dos anexos do documento.</li>
-            </ul>
-          </div>
-
-          <div class="area">
-            <h4>Sessões e plenário</h4>
-            <ul>
-              <li>Envio de mensagem imediata do operador para o painel multimídia.</li>
-              <li>Início automático do tempo de expediente na abertura da sessão.</li>
-              <li>Registro de justificativa de faltas pela interface, com exibição no relatório de presença.</li>
-              <li>Bloqueio do início da votação enquanto a chamada estiver aberta, com tratamento de presença retardatária.</li>
-            </ul>
-          </div>
-
-          <div class="area">
-            <h4>Relatórios e auditoria</h4>
-            <ul>
-              <li>Disponibilização de versão zebrada linha a linha, selecionável, nos relatórios de sessão.</li>
-              <li>Auditoria com tela da ocorrência, controle acionado, prioridade e identificação do usuário no registro.</li>
-              <li>Impressão e exportação da auditoria pela própria interface.</li>
+              <li>Gestão individual dos anexos do documento, um a um.</li>
             </ul>
           </div>
 
@@ -536,8 +574,6 @@
             <h4>Integrações</h4>
             <ul>
               <li>Exportação RSS de sessões e documentos de pauta, habilitada por parâmetro da câmara.</li>
-              <li>Integração de votação com o SAPL.</li>
-              <li>Ajustes na exportação de votação (XML Sino).</li>
             </ul>
           </div>
 
@@ -548,44 +584,41 @@
               <li>Registro da semântica dos parâmetros, com verificação de sincronia.</li>
             </ul>
           </div>
+
+          <div class="area">
+            <h4>Chamada e votação</h4>
+            <ul>
+              <li>A votação deixa de começar com a chamada em aberto, com tratamento de presença retardatária.</li>
+            </ul>
+          </div>
+
         </section>
 
         <section class="grupo g-melhoria">
           <div class="grupo-titulo">
-            <h3>Melhorias</h3><span class="linha"></span><span class="conta">6</span>
+            <h3>Melhorias</h3><span class="linha"></span><span class="conta">1</span>
           </div>
 
           <div class="area">
-            <h4>Desempenho e disponibilidade</h4>
+            <h4>Disponibilidade</h4>
             <ul>
-              <li>Modernização da plataforma base (Java 25 e Spring Boot 4).</li>
-              <li>Redução de chamadas repetidas ao servidor na tela do operador.</li>
-              <li>Diagnóstico de rede com medição de velocidade de envio e proteção contra falsos positivos.</li>
               <li>Devolução automática da infraestrutura ao estado ocioso após 24 horas, em sessão deixada em aberto.</li>
             </ul>
           </div>
 
-          <div class="area">
-            <h4>Qualidade</h4>
-            <ul>
-              <li>Monitoramento de erros das telas em produção.</li>
-              <li>Compilação e verificação automática de todas as telas a cada entrega.</li>
-            </ul>
-          </div>
         </section>
 
         <section class="grupo g-correcao">
           <div class="grupo-titulo">
-            <h3>Correções</h3><span class="linha"></span><span class="conta">20</span>
+            <h3>Correções</h3><span class="linha"></span><span class="conta">8</span>
           </div>
 
           <div class="area">
             <h4>Chamada e presença</h4>
             <ul>
-              <li>Aviso de presença não era exibido na tela do vereador e impedia o registro de votos.</li>
-              <li>Botão de registrar presença não respondia ao toque.</li>
+              <li>Aviso de presença não era exibido na tela do vereador e o voto só destravava recarregando a página.</li>
               <li>Encerramento da chamada duplicava o registro de presença, apresentava quórum incorreto e impedia o login do vereador.</li>
-              <li>Botão de finalizar chamada acionava rota inexistente.</li>
+              <li>Botão de registrar presença retornava erro genérico em vez de mensagem de autenticação.</li>
             </ul>
           </div>
 
@@ -593,59 +626,468 @@
             <h4>Tribuna e inscrições</h4>
             <ul>
               <li>Lista de inscritos não cabia na tela e o vereador não conseguia remover a própria inscrição.</li>
-              <li>Inscritos não apareciam antes do início da tribuna.</li>
-              <li>Início da tribuna na tela do operador.</li>
-              <li>Encerramento da palavra livre não direcionava para a ordem do dia.</li>
             </ul>
           </div>
 
           <div class="area">
             <h4>Documentos e relatórios</h4>
             <ul>
-              <li>Envio de documentos excedia o tempo limite e resultava em erro.</li>
-              <li>Falha na leitura de documentos.</li>
-              <li>Relatório indisponibilizava a tela por ausência de filtro de período.</li>
-              <li>Filtro na tela de relatórios não aplicava a seleção.</li>
+              <li>Mesmo PDF enviado duas vezes era gravado como dois anexos.</li>
               <li>Mês de referência das sessões nos relatórios considerava a data de cadastro em vez da data de realização.</li>
-              <li>Inserção de múltiplos PDFs falhava.</li>
             </ul>
           </div>
 
           <div class="area">
-            <h4>Painel e votação</h4>
+            <h4>Integrações</h4>
             <ul>
-              <li>Carregamento do painel falhava em cenários específicos.</li>
-              <li>Botão de discutir não permanecia selecionado após o recarregamento.</li>
-              <li>Votação em bloco na tela do operador.</li>
-              <li>Parâmetros que não estavam sendo aplicados.</li>
+              <li>Feed com limite inválido retornava erro em vez de assumir o padrão.</li>
+              <li>Feed inexistente retornava erro interno em vez de “não encontrado”.</li>
             </ul>
           </div>
 
-          <div class="area">
-            <h4>Biometria</h4>
-            <ul>
-              <li>Login facial retornava erro após o reconhecimento.</li>
-              <li>Validação de titularidade do token passou a exigir correspondência exata do CPF.</li>
-            </ul>
-          </div>
         </section>
+
       </article>
 
-      <!-- ============ V.2.1.0 ============ -->
-      <article class="release" id="v2-1-0">
+      <article class="release" id="v2-12-0">
         <header class="release-head">
-          <p class="eyebrow"><span>3 de agosto de 2026</span></p>
-          <h2 class="versao">Versão <span class="num">2.1.0</span></h2>
+          <p class="eyebrow">
+            <span>4 de setembro de 2026</span>
+          </p>
+          <h2 class="versao">Versão <span class="num">2.12.0</span></h2>
           <dl class="ficha">
-            <div><dt>Painel</dt><dd>v2.1.0</dd></div>
-            <div><dt>Serviço</dt><dd>v0.1.0</dd></div>
-            <div><dt>Itens</dt><dd>28</dd></div>
+            <div><dt>Painel</dt><dd>v2.12.0</dd></div>
+            <div><dt>Serviço</dt><dd>v0.12.0</dd></div>
+            <div><dt>Itens</dt><dd>3</dd></div>
           </dl>
         </header>
 
         <section class="grupo g-novo">
           <div class="grupo-titulo">
-            <h3>Novidades</h3><span class="linha"></span><span class="conta">16</span>
+            <h3>Novidades</h3><span class="linha"></span><span class="conta">2</span>
+          </div>
+
+          <div class="area">
+            <h4>Usuários</h4>
+            <ul>
+              <li>Senha de implantação com troca obrigatória no primeiro acesso.</li>
+              <li>Tela dedicada de primeiro acesso.</li>
+            </ul>
+          </div>
+
+        </section>
+
+        <section class="grupo g-correcao">
+          <div class="grupo-titulo">
+            <h3>Correções</h3><span class="linha"></span><span class="conta">1</span>
+          </div>
+
+          <div class="area">
+            <h4>Usuários</h4>
+            <ul>
+              <li>Troca de senha deixava de valer e a senha voltava a ser a padrão.</li>
+            </ul>
+          </div>
+
+        </section>
+
+      </article>
+
+      <article class="release" id="v2-11-0">
+        <header class="release-head">
+          <p class="eyebrow">
+            <span>2 de setembro de 2026</span>
+          </p>
+          <h2 class="versao">Versão <span class="num">2.11.0</span></h2>
+          <dl class="ficha">
+            <div><dt>Painel</dt><dd>v2.10.0 → v2.11.0</dd></div>
+            <div><dt>Serviço</dt><dd>v0.9.0 → v0.11.0</dd></div>
+            <div><dt>Itens</dt><dd>6</dd></div>
+          </dl>
+        </header>
+
+        <section class="grupo g-novo">
+          <div class="grupo-titulo">
+            <h3>Novidades</h3><span class="linha"></span><span class="conta">5</span>
+          </div>
+
+          <div class="area">
+            <h4>Ata da sessão</h4>
+            <ul>
+              <li>Fidelidade ao traço oficial da câmara, seguindo o padrão de redação já usado em plenário.</li>
+              <li>Capa própria e arte do cabeçalho em faixa, definidas por modelo.</li>
+              <li>Marcações de negrito, itálico e sublinhado na pré-visualização e no documento final.</li>
+              <li>Reconstrução da discussão das matérias a partir da transcrição, com vinculação às matérias da pauta.</li>
+              <li>Regerar a ata passa a tornar a nova geração o texto vigente da sessão.</li>
+            </ul>
+          </div>
+
+        </section>
+
+        <section class="grupo g-correcao">
+          <div class="grupo-titulo">
+            <h3>Correções</h3><span class="linha"></span><span class="conta">1</span>
+          </div>
+
+          <div class="area">
+            <h4>Ata da sessão</h4>
+            <ul>
+              <li>Edição do modelo sem informar a composição da mesa apagava os dados já cadastrados.</li>
+            </ul>
+          </div>
+
+        </section>
+
+      </article>
+
+      <article class="release" id="v2-9-0">
+        <header class="release-head">
+          <p class="eyebrow">
+            <span>1º de setembro de 2026</span>
+          </p>
+          <h2 class="versao">Versão <span class="num">2.9.0</span></h2>
+          <dl class="ficha">
+            <div><dt>Painel</dt><dd>v2.9.0</dd></div>
+            <div><dt>Serviço</dt><dd>v0.8.0</dd></div>
+            <div><dt>Itens</dt><dd>14</dd></div>
+          </dl>
+        </header>
+
+        <section class="grupo g-novo">
+          <div class="grupo-titulo">
+            <h3>Novidades</h3><span class="linha"></span><span class="conta">10</span>
+          </div>
+
+          <div class="area">
+            <h4>Ata da sessão</h4>
+            <ul>
+              <li>Geração automática da ata a partir da transcrição do áudio.</li>
+              <li>Telas de ata da sessão, de modelo e de vocabulário da câmara.</li>
+              <li>Emissão do PDF oficial da ata.</li>
+              <li>Modo de fala e delimitação da tribuna configuráveis no modelo.</li>
+              <li>Pré-visualização da ata dentro do próprio editor.</li>
+            </ul>
+          </div>
+
+          <div class="area">
+            <h4>Painel e plenário</h4>
+            <ul>
+              <li>Envio de mensagem imediata do operador para o painel multimídia.</li>
+              <li>Cronômetro do expediente inicia na abertura da sessão, sem recarregar o painel.</li>
+            </ul>
+          </div>
+
+          <div class="area">
+            <h4>Presença e auditoria</h4>
+            <ul>
+              <li>Registro de justificativa de falta, com anexo, pelo modal da chamada.</li>
+              <li>Auditoria com colunas dos Termos de Referência e impressão ou exportação pela própria tela.</li>
+            </ul>
+          </div>
+
+          <div class="area">
+            <h4>Relatórios</h4>
+            <ul>
+              <li>Versão zebrada linha a linha, selecionável, nos relatórios de sessão.</li>
+            </ul>
+          </div>
+
+        </section>
+
+        <section class="grupo g-correcao">
+          <div class="grupo-titulo">
+            <h3>Correções</h3><span class="linha"></span><span class="conta">4</span>
+          </div>
+
+          <div class="area">
+            <h4>Transcrição</h4>
+            <ul>
+              <li>Telas de transcrição não listavam as sessões finalizadas.</li>
+              <li>Seleção da tribuna trazia o catálogo da câmara em vez das tribunas da sessão.</li>
+              <li>Filtro por mês passou a ser aplicado no servidor, sem carregar a base inteira.</li>
+            </ul>
+          </div>
+
+          <div class="area">
+            <h4>Tribuna</h4>
+            <ul>
+              <li>Saída da tribuna passou a considerar a origem da solicitação.</li>
+            </ul>
+          </div>
+
+        </section>
+
+      </article>
+
+      <article class="release" id="v2-8-0">
+        <header class="release-head">
+          <p class="eyebrow">
+            <span>20 de agosto de 2026</span>
+          </p>
+          <h2 class="versao">Versão <span class="num">2.8.0</span></h2>
+          <dl class="ficha">
+            <div><dt>Painel</dt><dd>v2.7.0 → v2.8.0</dd></div>
+            <div><dt>Serviço</dt><dd>—</dd></div>
+            <div><dt>Itens</dt><dd>1</dd></div>
+          </dl>
+        </header>
+
+        <section class="grupo g-melhoria">
+          <div class="grupo-titulo">
+            <h3>Melhorias</h3><span class="linha"></span><span class="conta">1</span>
+          </div>
+
+          <div class="area">
+            <h4>Qualidade</h4>
+            <ul>
+              <li>Verificação automática das 241 telas do sistema antes de cada publicação, impedindo que uma tela com defeito chegue às câmaras.</li>
+            </ul>
+          </div>
+
+        </section>
+
+      </article>
+
+      <article class="release" id="v2-6-1">
+        <header class="release-head">
+          <p class="eyebrow">
+            <span>18 de agosto de 2026</span>
+          </p>
+          <h2 class="versao">Versão <span class="num">2.6.1</span></h2>
+          <dl class="ficha">
+            <div><dt>Painel</dt><dd>v2.6.0 → v2.6.1</dd></div>
+            <div><dt>Serviço</dt><dd>v0.7.0</dd></div>
+            <div><dt>Itens</dt><dd>7</dd></div>
+          </dl>
+        </header>
+
+        <section class="grupo g-novo">
+          <div class="grupo-titulo">
+            <h3>Novidades</h3><span class="linha"></span><span class="conta">3</span>
+          </div>
+
+          <div class="area">
+            <h4>Biometria e certificado</h4>
+            <ul>
+              <li>Cadastro e login por impressão digital.</li>
+              <li>Leitor biométrico passa a sinalizar o resultado da leitura no próprio aparelho.</li>
+              <li>Conferência da senha do certificado digital antes do salvamento, inclusive de certificado já cadastrado.</li>
+            </ul>
+          </div>
+
+        </section>
+
+        <section class="grupo g-correcao">
+          <div class="grupo-titulo">
+            <h3>Correções</h3><span class="linha"></span><span class="conta">4</span>
+          </div>
+
+          <div class="area">
+            <h4>Relatórios e integrações</h4>
+            <ul>
+              <li>Tela de relatórios ficava indisponível por não enviar o período do filtro ao servidor.</li>
+              <li>Exportação do XML de votações excedia o tempo limite e caía em erro; passou a ser gerada em lote.</li>
+            </ul>
+          </div>
+
+          <div class="area">
+            <h4>Acesso</h4>
+            <ul>
+              <li>Indisponibilidade da conferência online derrubava o login por biometria do aparelho.</li>
+              <li>Validação de titularidade passou a exigir correspondência exata do CPF.</li>
+            </ul>
+          </div>
+
+        </section>
+
+      </article>
+
+      <article class="release" id="v2-5-0">
+        <header class="release-head">
+          <p class="eyebrow">
+            <span>17 de agosto de 2026</span>
+          </p>
+          <h2 class="versao">Versão <span class="num">2.5.0</span></h2>
+          <dl class="ficha">
+            <div><dt>Painel</dt><dd>v2.4.0 → v2.5.0</dd></div>
+            <div><dt>Serviço</dt><dd>v0.6.0</dd></div>
+            <div><dt>Itens</dt><dd>11</dd></div>
+          </dl>
+        </header>
+
+        <section class="grupo g-novo">
+          <div class="grupo-titulo">
+            <h3>Novidades</h3><span class="linha"></span><span class="conta">4</span>
+          </div>
+
+          <div class="area">
+            <h4>Acesso</h4>
+            <ul>
+              <li>Login por biometria do próprio aparelho, em celular e tablet.</li>
+              <li>Tela “Meu Perfil”, com avatar acessível no celular.</li>
+            </ul>
+          </div>
+
+          <div class="area">
+            <h4>Monitoramento</h4>
+            <ul>
+              <li>Diagnóstico de rede com medição da velocidade de envio e proteção contra falsos positivos.</li>
+              <li>Captura de erros de tela ocorridos nas estações do plenário.</li>
+            </ul>
+          </div>
+
+        </section>
+
+        <section class="grupo g-correcao">
+          <div class="grupo-titulo">
+            <h3>Correções</h3><span class="linha"></span><span class="conta">7</span>
+          </div>
+
+          <div class="area">
+            <h4>Conexão</h4>
+            <ul>
+              <li>Tela voltava a funcionar sozinha após perda de comunicação.</li>
+              <li>Tela retomada do segundo plano passou a se ressincronizar automaticamente.</li>
+            </ul>
+          </div>
+
+          <div class="area">
+            <h4>Plenário</h4>
+            <ul>
+              <li>Lista de inscritos permanecia na tela após o fim da tribuna.</li>
+              <li>Botões de votação e tribuna não voltavam ao estado correto ao fim da votação.</li>
+              <li>Parâmetros de abrir a tela de votação e de pular a confirmação deixaram de ser ignorados.</li>
+              <li>Importação não listava os documentos ao trocar a sessão de origem.</li>
+            </ul>
+          </div>
+
+          <div class="area">
+            <h4>Interface</h4>
+            <ul>
+              <li>Botão de menu ficava fora da tela no celular.</li>
+            </ul>
+          </div>
+
+        </section>
+
+      </article>
+
+      <article class="release" id="v2-3-0">
+        <header class="release-head">
+          <p class="eyebrow">
+            <span>10 de agosto de 2026</span>
+          </p>
+          <h2 class="versao">Versão <span class="num">2.3.0</span></h2>
+          <dl class="ficha">
+            <div><dt>Painel</dt><dd>v2.3.0</dd></div>
+            <div><dt>Serviço</dt><dd>v0.4.0 → v0.5.0</dd></div>
+            <div><dt>Itens</dt><dd>1</dd></div>
+          </dl>
+        </header>
+
+        <section class="grupo g-melhoria">
+          <div class="grupo-titulo">
+            <h3>Melhorias</h3><span class="linha"></span><span class="conta">1</span>
+          </div>
+
+          <div class="area">
+            <h4>Monitoramento</h4>
+            <ul>
+              <li>Registro automático de erros de tela ocorridos durante a sessão, para diagnóstico sem depender do relato do operador.</li>
+            </ul>
+          </div>
+
+        </section>
+
+      </article>
+
+      <article class="release" id="v2-2-0">
+        <header class="release-head">
+          <p class="eyebrow">
+            <span>8 de agosto de 2026</span>
+          </p>
+          <h2 class="versao">Versão <span class="num">2.2.0</span></h2>
+          <dl class="ficha">
+            <div><dt>Painel</dt><dd>v2.1.1 → v2.2.0</dd></div>
+            <div><dt>Serviço</dt><dd>v0.2.0 → v0.3.0</dd></div>
+            <div><dt>Itens</dt><dd>12</dd></div>
+          </dl>
+        </header>
+
+        <section class="grupo g-novo">
+          <div class="grupo-titulo">
+            <h3>Novidades</h3><span class="linha"></span><span class="conta">1</span>
+          </div>
+
+          <div class="area">
+            <h4>Disponibilidade</h4>
+            <ul>
+              <li>Tela de preparação ao autorizar a sessão e reconexão automática quando o serviço fica indisponível.</li>
+            </ul>
+          </div>
+
+        </section>
+
+        <section class="grupo g-correcao">
+          <div class="grupo-titulo">
+            <h3>Correções</h3><span class="linha"></span><span class="conta">11</span>
+          </div>
+
+          <div class="area">
+            <h4>Chamada e votação</h4>
+            <ul>
+              <li>Botão de finalizar chamada acionava endereço inexistente.</li>
+              <li>Encerramento de votação em lote falhava ao carregar os autores dos documentos.</li>
+              <li>Voto de minerva falhava ao carregar os dados da votação.</li>
+            </ul>
+          </div>
+
+          <div class="area">
+            <h4>Tribuna e pauta</h4>
+            <ul>
+              <li>Inscritos apareciam antes de a tribuna ser iniciada.</li>
+              <li>Ordenação dos documentos da pauta não era mantida.</li>
+              <li>Fluxo de discussão na tela do presidente não refletia o estado corrente.</li>
+              <li>Tempo adicional de tribuna com valor decimal derrubava a tela.</li>
+            </ul>
+          </div>
+
+          <div class="area">
+            <h4>Documentos e relatórios</h4>
+            <ul>
+              <li>Leitura de documento em sessão sem quórum derrubava a tela.</li>
+              <li>Relatórios passaram a limitar a resolução do brasão, que estourava a memória na geração do PDF.</li>
+              <li>Roteamento da trilha de navegação da auditoria.</li>
+            </ul>
+          </div>
+
+          <div class="area">
+            <h4>Acesso</h4>
+            <ul>
+              <li>Sessão do usuário perdia o login por exceder o tamanho do cookie.</li>
+            </ul>
+          </div>
+
+        </section>
+
+      </article>
+
+      <article class="release" id="v2-1-0">
+        <header class="release-head">
+          <p class="eyebrow">
+            <span>3 de agosto de 2026</span>
+          </p>
+          <h2 class="versao">Versão <span class="num">2.1.0</span></h2>
+          <dl class="ficha">
+            <div><dt>Painel</dt><dd>v2.1.0</dd></div>
+            <div><dt>Serviço</dt><dd>v0.1.0</dd></div>
+            <div><dt>Itens</dt><dd>27</dd></div>
+          </dl>
+        </header>
+
+        <section class="grupo g-novo">
+          <div class="grupo-titulo">
+            <h3>Novidades</h3><span class="linha"></span><span class="conta">15</span>
           </div>
 
           <div class="area">
@@ -690,9 +1132,9 @@
             <h4>Disponibilidade</h4>
             <ul>
               <li>Escalonamento automático da infraestrutura por ciclo de sessão, com pré-aquecimento do ambiente antes do horário previsto.</li>
-              <li>Reconexão automática em casos de perda de conexão durante a sessão, com tela de preparação para o usuário.</li>
             </ul>
           </div>
+
         </section>
 
         <section class="grupo g-melhoria">
@@ -716,6 +1158,7 @@
               <li>Remoção de credenciais sensíveis expostas no código-fonte.</li>
             </ul>
           </div>
+
         </section>
 
         <section class="grupo g-correcao">
@@ -753,7 +1196,33 @@
               <li>Falhas no carregamento do painel em cenários específicos.</li>
             </ul>
           </div>
+
         </section>
+
+      </article>
+
+      <article class="release" id="inicial">
+        <header class="release-head">
+          <p class="eyebrow"><span>Até 3 de agosto de 2026</span></p>
+          <h2 class="versao">Registro inicial</h2>
+        </header>
+
+        <div class="nota">
+          <p>O histórico detalhado começa em <strong>3 de agosto de 2026</strong>, quando cada publicação passou a
+          gerar um registro de versão automático. As entregas anteriores a essa data não têm notas individuais.</p>
+          <p>Nessa altura o SGVP já operava em plenário com o conjunto que sustenta a sessão:</p>
+          <ul>
+            <li>Abertura, condução e encerramento da sessão, com pauta e ordem do dia.</li>
+            <li>Chamada, registro de presença e apuração de quórum.</li>
+            <li>Votação nominal, simbólica e secreta, com voto de minerva e votação em bloco.</li>
+            <li>Tribuna com inscrições, tempo de fala e tempo adicional.</li>
+            <li>Painel multimídia e telão do plenário.</li>
+            <li>Cadastro de documentos, autores e anexos.</li>
+            <li>Relatórios de sessão, presença, votação e tribuna.</li>
+            <li>Integração com os sistemas legislativos Sino, Legis e Ágape.</li>
+            <li>Comissões, usuários e perfis de acesso.</li>
+          </ul>
+        </div>
       </article>
 
       <footer class="rodape">
