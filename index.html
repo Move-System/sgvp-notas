@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Notas de Versão SGVP</title>
+<meta name="description" content="Histórico de atualizações do SGVP — Sistema de Gestão de Votação e Plenário. Novidades, melhorias e correções de cada versão publicada.">
+<meta name="theme-color" content="#12242B">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Notas de Versão SGVP">
+<meta property="og:description" content="Histórico de atualizações do Sistema de Gestão de Votação e Plenário: novidades, melhorias e correções de cada versão.">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:url" content="https://move-system.github.io/sgvp-notas/">
+<meta name="twitter:card" content="summary">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230E6B6B'/%3E%3Cpath d='M8 17.5l5 5 11-13' stroke='%23fff' stroke-width='3.2' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=Public+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+
+<style>
+  :root {
+    /* Luz — tinta azul-petróleo sobre off-white de viés frio */
+    --ground:      #F7F8F7;
+    --surface:     #FFFFFF;
+    --surface-alt: #F0F3F2;
+    --ink:         #12242B;
+    --ink-soft:    #2E4249;
+    --muted:       #5C6E74;
+    --rule:        #DDE3E3;
+    --rule-soft:   #E9EDEC;
+    --accent:      #0E6B6B;
+    --highlight:   #8A6220;
+    --highlight-bg:#F6EDDC;
+
+    --novo:        #0E6B6B;
+    --melhoria:    #3C5A8A;
+    --correcao:    #8A4B2A;
+
+    --serif: "Newsreader", "Iowan Old Style", Georgia, serif;
+    --sans:  "Public Sans", "Helvetica Neue", Arial, sans-serif;
+    --mono:  "IBM Plex Mono", "SF Mono", Menlo, monospace;
+
+    --measure: 64ch;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ground:      #0E1719;
+      --surface:     #152124;
+      --surface-alt: #1B292D;
+      --ink:         #E7EDEC;
+      --ink-soft:    #C3D0D0;
+      --muted:       #8CA0A3;
+      --rule:        #2A3B3F;
+      --rule-soft:   #213134;
+      --accent:      #5FBDB6;
+      --highlight:   #D9A44E;
+      --highlight-bg:#2E2617;
+
+      --novo:        #5FBDB6;
+      --melhoria:    #8FADD8;
+      --correcao:    #D69B72;
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --ground:      #0E1719;
+    --surface:     #152124;
+    --surface-alt: #1B292D;
+    --ink:         #E7EDEC;
+    --ink-soft:    #C3D0D0;
+    --muted:       #8CA0A3;
+    --rule:        #2A3B3F;
+    --rule-soft:   #213134;
+    --accent:      #5FBDB6;
+    --highlight:   #D9A44E;
+    --highlight-bg:#2E2617;
+
+    --novo:        #5FBDB6;
+    --melhoria:    #8FADD8;
+    --correcao:    #D69B72;
+  }
+
+  * { box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    margin: 0;
+    background: var(--ground);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  img { max-width: 100%; }
+
+  .wrap {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 28px 96px;
+  }
+
+  /* ---------- Cabeçalho ---------- */
+
+  .masthead {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 8px 20px;
+    padding: 44px 0 20px;
+    border-bottom: 2px solid var(--ink);
+  }
+
+  .masthead .produto {
+    font-family: var(--mono);
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 0 0 10px;
+    width: 100%;
+  }
+
+  .masthead h1 {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: clamp(30px, 4.4vw, 44px);
+    line-height: 1.08;
+    letter-spacing: -0.015em;
+    margin: 0;
+    text-wrap: balance;
+  }
+
+  .masthead .sub {
+    color: var(--muted);
+    font-size: 15px;
+    margin: 0 0 0 auto;
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+  }
+
+  @media (max-width: 620px) {
+    .masthead .sub { margin-left: 0; text-align: left; }
+  }
+
+  /* ---------- Corpo em duas trilhas ---------- */
+
+  .layout {
+    display: grid;
+    grid-template-columns: 196px minmax(0, 1fr);
+    gap: 56px;
+    align-items: start;
+    margin-top: 40px;
+  }
+
+  @media (max-width: 880px) {
+    .layout { grid-template-columns: 1fr; gap: 28px; }
+  }
+
+  .indice {
+    position: sticky;
+    top: 24px;
+    font-size: 14px;
+  }
+
+  @media (max-width: 880px) {
+    .indice {
+      position: static;
+      border: 1px solid var(--rule);
+      border-radius: 4px;
+      padding: 16px 18px;
+      background: var(--surface);
+    }
+  }
+
+  .indice h2 {
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 0 0 14px;
+  }
+
+  .indice ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .indice a {
+    display: block;
+    padding: 8px 10px 8px 12px;
+    border-left: 2px solid var(--rule);
+    color: var(--ink-soft);
+    text-decoration: none;
+    transition: border-color .15s, color .15s, background .15s;
+  }
+
+  .indice a:hover,
+  .indice a:focus-visible {
+    color: var(--ink);
+    background: var(--surface-alt);
+    border-left-color: var(--accent);
+  }
+
+  .indice a[aria-current="true"] {
+    border-left-color: var(--accent);
+    color: var(--ink);
+    font-weight: 500;
+  }
+
+  .indice .v { font-family: var(--mono); font-size: 13px; display: block; }
+  .indice .d { color: var(--muted); font-size: 12px; font-variant-numeric: tabular-nums; }
+
+  /* ---------- Release ---------- */
+
+  .release { padding-bottom: 8px; }
+
+  .release + .release {
+    margin-top: 72px;
+    padding-top: 56px;
+    border-top: 1px solid var(--rule);
+  }
+
+  .release-head { margin-bottom: 36px; }
+
+  .eyebrow {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 0 0 12px;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .selo {
+    display: inline-block;
+    padding: 3px 9px;
+    border-radius: 3px;
+    background: var(--highlight-bg);
+    color: var(--highlight);
+    font-weight: 500;
+    letter-spacing: 0.1em;
+  }
+
+  .release h2.versao {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: clamp(28px, 3.6vw, 38px);
+    line-height: 1.1;
+    letter-spacing: -0.015em;
+    margin: 0 0 18px;
+  }
+
+  .release h2.versao .num { font-variant-numeric: tabular-nums; }
+
+  .ficha {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    overflow: hidden;
+    background: var(--surface);
+  }
+
+  .ficha div {
+    flex: 1 1 130px;
+    padding: 12px 16px;
+    border-right: 1px solid var(--rule-soft);
+  }
+
+  .ficha div:last-child { border-right: 0; }
+
+  .ficha dt {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 0 0 4px;
+  }
+
+  .ficha dd {
+    margin: 0;
+    font-family: var(--mono);
+    font-size: 14px;
+    color: var(--ink);
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* ---------- Seções ---------- */
+
+  .grupo { margin-top: 44px; }
+
+  .grupo-titulo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+
+  .grupo-titulo h3 {
+    font-family: var(--sans);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin: 0;
+    white-space: nowrap;
+  }
+
+  .grupo-titulo .linha { flex: 1; height: 1px; background: var(--rule); }
+
+  .grupo-titulo .conta {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--muted);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .g-novo     h3 { color: var(--novo); }
+  .g-melhoria h3 { color: var(--melhoria); }
+  .g-correcao h3 { color: var(--correcao); }
+
+  .area { margin-bottom: 30px; }
+  .area:last-child { margin-bottom: 0; }
+
+  .area h4 {
+    font-family: var(--serif);
+    font-size: 19px;
+    font-weight: 600;
+    margin: 0 0 10px;
+    color: var(--ink);
+    letter-spacing: -0.005em;
+  }
+
+  .area ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    max-width: var(--measure);
+  }
+
+  .area li {
+    position: relative;
+    padding-left: 20px;
+    color: var(--ink-soft);
+  }
+
+  .area li::before {
+    content: "";
+    position: absolute;
+    left: 2px;
+    top: 11px;
+    width: 6px;
+    height: 1px;
+    background: var(--muted);
+  }
+
+  .g-novo     .area li::before { background: var(--novo); }
+  .g-melhoria .area li::before { background: var(--melhoria); }
+  .g-correcao .area li::before { background: var(--correcao); }
+
+  /* ---------- Rodapé ---------- */
+
+  .rodape {
+    margin-top: 80px;
+    padding-top: 24px;
+    border-top: 1px solid var(--rule);
+    color: var(--muted);
+    font-size: 13px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 24px;
+    align-items: baseline;
+  }
+
+  .rodape .marca {
+    font-family: var(--mono);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-size: 11px;
+    color: var(--ink-soft);
+  }
+
+  a { color: var(--accent); }
+
+  :focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; }
+    html { scroll-behavior: auto; }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <header class="masthead">
+    <p class="produto">SGVP · Sistema de Gestão de Votação e Plenário</p>
+    <h1>Notas de Versão</h1>
+    <p class="sub">2 edições publicadas<br>Atualizado em 18 de setembro de 2026</p>
+  </header>
+
+  <div class="layout">
+
+    <nav class="indice" aria-label="Edições">
+      <h2>Edições</h2>
+      <ol>
+        <li>
+          <a href="#v2-13-0" aria-current="true">
+            <span class="v">V. 2.13.0</span>
+            <span class="d">18 set 2026</span>
+          </a>
+        </li>
+        <li>
+          <a href="#v2-1-0">
+            <span class="v">V. 2.1.0</span>
+            <span class="d">3 ago 2026</span>
+          </a>
+        </li>
+      </ol>
+    </nav>
+
+    <main>
+
+      <!-- ============ V.2.13.0 ============ -->
+      <article class="release" id="v2-13-0">
+        <header class="release-head">
+          <p class="eyebrow">
+            <span class="selo">Versão vigente</span>
+            <span>18 de setembro de 2026</span>
+          </p>
+          <h2 class="versao">Versão <span class="num">2.13.0</span></h2>
+          <dl class="ficha">
+            <div><dt>Painel</dt><dd>v2.13.0</dd></div>
+            <div><dt>Serviço</dt><dd>v0.13.0</dd></div>
+            <div><dt>Itens</dt><dd>56</dd></div>
+          </dl>
+        </header>
+
+        <section class="grupo g-novo">
+          <div class="grupo-titulo">
+            <h3>Novidades</h3><span class="linha"></span><span class="conta">30</span>
+          </div>
+
+          <div class="area">
+            <h4>Atas e transcrição</h4>
+            <ul>
+              <li>Geração automática da ata da sessão a partir da transcrição do áudio.</li>
+              <li>Modelo de ata configurável por câmara, com vocabulário próprio, modo de fala, delimitação da tribuna, capa e arte do cabeçalho.</li>
+              <li>Reconstrução da discussão das matérias a partir da transcrição, com vinculação às matérias da pauta.</li>
+              <li>Pré-visualização da ata na própria tela, com marcações de negrito, itálico e sublinhado.</li>
+              <li>Emissão do PDF oficial da ata.</li>
+              <li>Regeração da ata, passando a valer como texto vigente da sessão.</li>
+            </ul>
+          </div>
+
+          <div class="area">
+            <h4>Acesso e identificação</h4>
+            <ul>
+              <li>Login por biometria facial e digital em celular e tablet.</li>
+              <li>Pré-identificação por CPF no fluxo de biometria.</li>
+              <li>Conferência da senha do certificado digital antes do salvamento.</li>
+              <li>Senha de implantação com troca obrigatória no primeiro acesso.</li>
+            </ul>
+          </div>
+
+          <div class="area">
+            <h4>Tela do operador</h4>
+            <ul>
+              <li>Reformulação da tela no novo padrão visual.</li>
+              <li>Aplicação de modo espectador conforme o perfil de acesso.</li>
+              <li>Atualização em tempo real da tela, sem necessidade de recarregamento.</li>
+              <li>Votação em bloco.</li>
+              <li>Reordenação dos documentos da pauta por arrastar.</li>
+            </ul>
+          </div>
+
+          <div class="area">
+            <h4>Documentos</h4>
+            <ul>
+              <li>Envio de múltiplos PDFs por documento.</li>
+              <li>Envio de arquivos diretamente ao armazenamento, com barra de progresso por arquivo.</li>
+              <li>Gestão individual dos anexos do documento.</li>
+            </ul>
+          </div>
+
+          <div class="area">
+            <h4>Sessões e plenário</h4>
+            <ul>
+              <li>Envio de mensagem imediata do operador para o painel multimídia.</li>
+              <li>Início automático do tempo de expediente na abertura da sessão.</li>
+              <li>Registro de justificativa de faltas pela interface, com exibição no relatório de presença.</li>
+              <li>Bloqueio do início da votação enquanto a chamada estiver aberta, com tratamento de presença retardatária.</li>
+            </ul>
+          </div>
+
+          <div class="area">
+            <h4>Relatórios e auditoria</h4>
+            <ul>
+              <li>Disponibilização de versão zebrada linha a linha, selecionável, nos relatórios de sessão.</li>
+              <li>Auditoria com tela da ocorrência, controle acionado, prioridade e identificação do usuário no registro.</li>
+              <li>Impressão e exportação da auditoria pela própria interface.</li>
+            </ul>
+          </div>
+
+          <div class="area">
+            <h4>Integrações</h4>
+            <ul>
+              <li>Exportação RSS de sessões e documentos de pauta, habilitada por parâmetro da câmara.</li>
+              <li>Integração de votação com o SAPL.</li>
+              <li>Ajustes na exportação de votação (XML Sino).</li>
+            </ul>
+          </div>
+
+          <div class="area">
+            <h4>Parametrização assistida</h4>
+            <ul>
+              <li>Configuração de câmara assistida por inteligência artificial, com envio do Termo de Referência ou Regimento e extração automática dos parâmetros.</li>
+              <li>Registro da semântica dos parâmetros, com verificação de sincronia.</li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="grupo g-melhoria">
+          <div class="grupo-titulo">
+            <h3>Melhorias</h3><span class="linha"></span><span class="conta">6</span>
+          </div>
+
+          <div class="area">
+            <h4>Desempenho e disponibilidade</h4>
+            <ul>
+              <li>Modernização da plataforma base (Java 25 e Spring Boot 4).</li>
+              <li>Redução de chamadas repetidas ao servidor na tela do operador.</li>
+              <li>Diagnóstico de rede com medição de velocidade de envio e proteção contra falsos positivos.</li>
+              <li>Devolução automática da infraestrutura ao estado ocioso após 24 horas, em sessão deixada em aberto.</li>
+            </ul>
+          </div>
+
+          <div class="area">
+            <h4>Qualidade</h4>
+            <ul>
+              <li>Monitoramento de erros das telas em produção.</li>
+              <li>Compilação e verificação automática de todas as telas a cada entrega.</li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="grupo g-correcao">
+          <div class="grupo-titulo">
+            <h3>Correções</h3><span class="linha"></span><span class="conta">20</span>
+          </div>
+
+          <div class="area">
+            <h4>Chamada e presença</h4>
+            <ul>
+              <li>Aviso de presença não era exibido na tela do vereador e impedia o registro de votos.</li>
+              <li>Botão de registrar presença não respondia ao toque.</li>
+              <li>Encerramento da chamada duplicava o registro de presença, apresentava quórum incorreto e impedia o login do vereador.</li>
+              <li>Botão de finalizar chamada acionava rota inexistente.</li>
+            </ul>
+          </div>
+
+          <div class="area">
+            <h4>Tribuna e inscrições</h4>
+            <ul>
+              <li>Lista de inscritos não cabia na tela e o vereador não conseguia remover a própria inscrição.</li>
+              <li>Inscritos não apareciam antes do início da tribuna.</li>
+              <li>Início da tribuna na tela do operador.</li>
+              <li>Encerramento da palavra livre não direcionava para a ordem do dia.</li>
+            </ul>
+          </div>
+
+          <div class="area">
+            <h4>Documentos e relatórios</h4>
+            <ul>
+              <li>Envio de documentos excedia o tempo limite e resultava em erro.</li>
+              <li>Falha na leitura de documentos.</li>
+              <li>Relatório indisponibilizava a tela por ausência de filtro de período.</li>
+              <li>Filtro na tela de relatórios não aplicava a seleção.</li>
+              <li>Mês de referência das sessões nos relatórios considerava a data de cadastro em vez da data de realização.</li>
+              <li>Inserção de múltiplos PDFs falhava.</li>
+            </ul>
+          </div>
+
+          <div class="area">
+            <h4>Painel e votação</h4>
+            <ul>
+              <li>Carregamento do painel falhava em cenários específicos.</li>
+              <li>Botão de discutir não permanecia selecionado após o recarregamento.</li>
+              <li>Votação em bloco na tela do operador.</li>
+              <li>Parâmetros que não estavam sendo aplicados.</li>
+            </ul>
+          </div>
+
+          <div class="area">
+            <h4>Biometria</h4>
+            <ul>
+              <li>Login facial retornava erro após o reconhecimento.</li>
+              <li>Validação de titularidade do token passou a exigir correspondência exata do CPF.</li>
+            </ul>
+          </div>
+        </section>
+      </article>
+
+      <!-- ============ V.2.1.0 ============ -->
+      <article class="release" id="v2-1-0">
+        <header class="release-head">
+          <p class="eyebrow"><span>3 de agosto de 2026</span></p>
+          <h2 class="versao">Versão <span class="num">2.1.0</span></h2>
+          <dl class="ficha">
+            <div><dt>Painel</dt><dd>v2.1.0</dd></div>
+            <div><dt>Serviço</dt><dd>v0.1.0</dd></div>
+            <div><dt>Itens</dt><dd>28</dd></div>
+          </dl>
+        </header>
+
+        <section class="grupo g-novo">
+          <div class="grupo-titulo">
+            <h3>Novidades</h3><span class="linha"></span><span class="conta">16</span>
+          </div>
+
+          <div class="area">
+            <h4>Permissões e acesso</h4>
+            <ul>
+              <li>Matriz de permissões por perfil e por usuário.</li>
+              <li>Telas segmentadas conforme o nível de acesso.</li>
+              <li>Usuário superadministrador para gerenciamento das permissões.</li>
+              <li>Padronização das mensagens de acesso negado em todo o sistema.</li>
+            </ul>
+          </div>
+
+          <div class="area">
+            <h4>Documentos e sessões</h4>
+            <ul>
+              <li>Configuração que permite definir se documentos de vereadores ausentes devem ser submetidos à votação.</li>
+              <li>Identificação automática da ausência do autor do documento com base na chamada da sessão.</li>
+              <li>Geração automática de documentos para sessões de teste.</li>
+              <li>Novo fluxo de workflow para o Regimento Interno.</li>
+              <li>Complementação dos parâmetros de configuração das sessões.</li>
+            </ul>
+          </div>
+
+          <div class="area">
+            <h4>Tribuna e painel</h4>
+            <ul>
+              <li>Exibição do nome da tribuna no telão e no painel de discussão.</li>
+              <li>Novos relatórios de tribuna e discussão.</li>
+              <li>Parâmetros de exibição e acesso direto ao Regimento Interno.</li>
+            </ul>
+          </div>
+
+          <div class="area">
+            <h4>Auditoria de integrações</h4>
+            <ul>
+              <li>Módulo de auditoria para importações realizadas pelos sistemas integrados (Sino, Legis e Ágape).</li>
+              <li>Segmentação da rastreabilidade das auditorias por sessão.</li>
+            </ul>
+          </div>
+
+          <div class="area">
+            <h4>Disponibilidade</h4>
+            <ul>
+              <li>Escalonamento automático da infraestrutura por ciclo de sessão, com pré-aquecimento do ambiente antes do horário previsto.</li>
+              <li>Reconexão automática em casos de perda de conexão durante a sessão, com tela de preparação para o usuário.</li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="grupo g-melhoria">
+          <div class="grupo-titulo">
+            <h3>Melhorias</h3><span class="linha"></span><span class="conta">5</span>
+          </div>
+
+          <div class="area">
+            <h4>Comissões</h4>
+            <ul>
+              <li>Otimização do fator limitante de aprovação.</li>
+              <li>Desempenho nas consultas relacionadas às comissões.</li>
+            </ul>
+          </div>
+
+          <div class="area">
+            <h4>Segurança</h4>
+            <ul>
+              <li>Reforço da proteção contra ataques utilizando arquivos XML nas integrações.</li>
+              <li>Centralização da política de controle de origem (CORS) por ambiente.</li>
+              <li>Remoção de credenciais sensíveis expostas no código-fonte.</li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="grupo g-correcao">
+          <div class="grupo-titulo">
+            <h3>Correções</h3><span class="linha"></span><span class="conta">7</span>
+          </div>
+
+          <div class="area">
+            <h4>Sessões e documentos</h4>
+            <ul>
+              <li>Status da sessão não era atualizado corretamente para “Iniciada” em determinados fluxos.</li>
+              <li>Exibição de inscritos após o encerramento do período de inscrições.</li>
+            </ul>
+          </div>
+
+          <div class="area">
+            <h4>Integrações</h4>
+            <ul>
+              <li>Falha que impedia a gravação de todos os autores durante processos de importação.</li>
+            </ul>
+          </div>
+
+          <div class="area">
+            <h4>Relatórios</h4>
+            <ul>
+              <li>Geração de relatórios em PDF das votações.</li>
+            </ul>
+          </div>
+
+          <div class="area">
+            <h4>Usuários</h4>
+            <ul>
+              <li>Perda da configuração de superusuário durante a edição de usuários.</li>
+              <li>Nome do usuário exibido na tela inicial.</li>
+              <li>Falhas no carregamento do painel em cenários específicos.</li>
+            </ul>
+          </div>
+        </section>
+      </article>
+
+      <footer class="rodape">
+        <span class="marca">AMZ TEC</span>
+        <span>As versões do painel e do serviço avançam juntas a cada publicação.</span>
+      </footer>
+
+    </main>
+  </div>
+</div>
+
+<script>
+  (function () {
+    var links = Array.prototype.slice.call(document.querySelectorAll('.indice a'));
+    var alvos = links.map(function (a) {
+      return document.getElementById(a.getAttribute('href').slice(1));
+    });
+
+    function marcar() {
+      var topo = window.scrollY + 120;
+      var atual = 0;
+      for (var i = 0; i < alvos.length; i++) {
+        if (alvos[i] && alvos[i].offsetTop <= topo) { atual = i; }
+      }
+      for (var j = 0; j < links.length; j++) {
+        if (j === atual) { links[j].setAttribute('aria-current', 'true'); }
+        else { links[j].removeAttribute('aria-current'); }
+      }
+    }
+
+    var agendado = false;
+    window.addEventListener('scroll', function () {
+      if (agendado) { return; }
+      agendado = true;
+      window.requestAnimationFrame(function () { marcar(); agendado = false; });
+    }, { passive: true });
+
+    marcar();
+  }());
+</script>
+</body>
+</html>
