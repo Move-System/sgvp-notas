@@ -463,7 +463,7 @@
   <header class="masthead">
     <p class="produto">SGVP · Sistema de Gestão de Votação e Plenário</p>
     <h1>Notas de Versão</h1>
-    <p class="sub">11 edições publicadas<br>Atualizado em 18 de setembro de 2026</p>
+    <p class="sub">12 edições publicadas<br>Atualizado em 2 de outubro de 2026</p>
   </header>
 
   <div class="layout">
@@ -472,7 +472,13 @@
       <h2>Edições</h2>
       <ol>
         <li>
-          <a href="#v2-13-0" aria-current="true">
+          <a href="#v2-14-0" aria-current="true">
+            <span class="v">V. 2.14.0</span>
+            <span class="d">2 out 2026</span>
+          </a>
+        </li>
+        <li>
+          <a href="#v2-13-0">
             <span class="v">V. 2.13.0</span>
             <span class="d">18 set 2026</span>
           </a>
@@ -542,10 +548,80 @@
 
     <main>
 
-      <article class="release" id="v2-13-0">
+      <article class="release" id="v2-14-0">
         <header class="release-head">
           <p class="eyebrow">
             <span class="selo">Versão vigente</span>
+            <span>2 de outubro de 2026</span>
+          </p>
+          <h2 class="versao">Versão <span class="num">2.14.0</span></h2>
+          <dl class="ficha">
+            <div><dt>Painel</dt><dd>v2.14.0</dd></div>
+            <div><dt>Serviço</dt><dd>v0.14.0</dd></div>
+            <div><dt>Itens</dt><dd>10</dd></div>
+          </dl>
+        </header>
+
+        <section class="grupo g-novo">
+          <div class="grupo-titulo">
+            <h3>Novidades</h3><span class="linha"></span><span class="conta">3</span>
+          </div>
+
+          <div class="area">
+            <h4>Parametrização assistida</h4>
+            <ul>
+              <li>Tela para enviar o Termo de Referência e o Regimento, revisar os parâmetros extraídos pela inteligência artificial e aplicá-los à câmara.</li>
+              <li>Lista de pendências de implantação, com o que ainda precisa ser conferido depois de aplicar a configuração.</li>
+              <li>Acesso pelo menu, restrito ao perfil de administrador.</li>
+            </ul>
+          </div>
+
+        </section>
+
+        <section class="grupo g-melhoria">
+          <div class="grupo-titulo">
+            <h3>Melhorias</h3><span class="linha"></span><span class="conta">5</span>
+          </div>
+
+          <div class="area">
+            <h4>Parametrização assistida</h4>
+            <ul>
+              <li>Aplicar a configuração mais de uma vez não duplica mais a estrutura da sessão.</li>
+              <li>A extração do Regimento só aceita um fundamento quando o artigo citado é realmente encontrado no texto.</li>
+              <li>Dados de identidade da câmara e tipos de autor são preenchidos automaticamente a partir dos documentos.</li>
+              <li>Parâmetros de aparência passam a receber valores padrão do produto, em vez de ficarem em branco.</li>
+            </ul>
+          </div>
+
+          <div class="area">
+            <h4>Desempenho e disponibilidade</h4>
+            <ul>
+              <li>Sessões recebidas por integração passam a trazer a data, o que permite preparar a infraestrutura antes do horário da sessão.</li>
+            </ul>
+          </div>
+
+        </section>
+
+        <section class="grupo g-correcao">
+          <div class="grupo-titulo">
+            <h3>Correções</h3><span class="linha"></span><span class="conta">2</span>
+          </div>
+
+          <div class="area">
+            <h4>Discussão</h4>
+            <ul>
+              <li>Inscritos ausentes não apareciam na discussão.</li>
+              <li>Autor presente na chamada podia ficar fora da lista de discussão quando estava desconectado.</li>
+            </ul>
+          </div>
+
+        </section>
+
+      </article>
+
+      <article class="release" id="v2-13-0">
+        <header class="release-head">
+          <p class="eyebrow">
             <span>18 de setembro de 2026</span>
           </p>
           <h2 class="versao">Versão <span class="num">2.13.0</span></h2>
