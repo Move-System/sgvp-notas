@@ -463,7 +463,7 @@
   <header class="masthead">
     <p class="produto">SGVP · Sistema de Gestão de Votação e Plenário</p>
     <h1>Notas de Versão</h1>
-    <p class="sub">12 edições publicadas<br>Atualizado em 2 de outubro de 2026</p>
+    <p class="sub">14 edições publicadas<br>Atualizado em 23 de outubro de 2026</p>
   </header>
 
   <div class="layout">
@@ -472,7 +472,19 @@
       <h2>Edições</h2>
       <ol>
         <li>
-          <a href="#v2-14-0" aria-current="true">
+          <a href="#v2-16-0" aria-current="true">
+            <span class="v">V. 2.16.0</span>
+            <span class="d">23 out 2026</span>
+          </a>
+        </li>
+        <li>
+          <a href="#v2-15-0">
+            <span class="v">V. 2.15.0</span>
+            <span class="d">9 out 2026</span>
+          </a>
+        </li>
+        <li>
+          <a href="#v2-14-0">
             <span class="v">V. 2.14.0</span>
             <span class="d">2 out 2026</span>
           </a>
@@ -548,10 +560,145 @@
 
     <main>
 
-      <article class="release" id="v2-14-0">
+      <article class="release" id="v2-16-0">
         <header class="release-head">
           <p class="eyebrow">
             <span class="selo">Versão vigente</span>
+            <span>23 de outubro de 2026</span>
+          </p>
+          <h2 class="versao">Versão <span class="num">2.16.0</span></h2>
+          <dl class="ficha">
+            <div><dt>Painel</dt><dd>v2.16.0</dd></div>
+            <div><dt>Serviço</dt><dd>v0.16.0</dd></div>
+            <div><dt>Itens</dt><dd>17</dd></div>
+          </dl>
+        </header>
+
+        <section class="grupo g-melhoria">
+          <div class="grupo-titulo">
+            <h3>Melhorias</h3><span class="linha"></span><span class="conta">9</span>
+          </div>
+
+          <div class="area">
+            <h4>Atas e transcrição</h4>
+            <ul>
+              <li>Novo modelo padrão de ata, com formatação no padrão ABNT no PDF oficial.</li>
+              <li>Bloco de assinaturas da Mesa Diretora ao final da ata.</li>
+              <li>Identidade visual do sistema no PDF oficial, com o resultado das votações em destaque e o corpo do texto mais compacto.</li>
+              <li>Resumo da pauta no início da ata do modelo padrão.</li>
+              <li>No modelo padrão, as falas passam a ser citadas pelo nome do orador, com remissão ao vídeo da sessão.</li>
+              <li>Câmaras que já personalizaram o modelo de ata mantêm a configuração atual.</li>
+            </ul>
+          </div>
+
+          <div class="area">
+            <h4>Documentos</h4>
+            <ul>
+              <li>A fase do documento passa a ser obrigatória no cadastro e na edição quando o documento vai a votação ou discussão.</li>
+              <li>Quórum, momento e ementa passam a ser obrigatórios no cadastro do documento, com aviso antes do envio.</li>
+              <li>Mensagens de validação passam a mostrar o nome legível de cada campo.</li>
+            </ul>
+          </div>
+
+        </section>
+
+        <section class="grupo g-correcao">
+          <div class="grupo-titulo">
+            <h3>Correções</h3><span class="linha"></span><span class="conta">8</span>
+          </div>
+
+          <div class="area">
+            <h4>Votação</h4>
+            <ul>
+              <li>Concluir a votação em bloco dava erro quando um dos documentos estava sem fase definida. Agora o sistema indica qual documento precisa ser ajustado.</li>
+              <li>Documentos recebidos por integração sem fase definida davam erro no encerramento da votação.</li>
+            </ul>
+          </div>
+
+          <div class="area">
+            <h4>Sessão e implantação</h4>
+            <ul>
+              <li>Em câmara recém-implantada, as listas de momentos da sessão, chamada de presença, votos, tribuna e roteiro podiam aparecer vazias.</li>
+            </ul>
+          </div>
+
+          <div class="area">
+            <h4>Atas e transcrição</h4>
+            <ul>
+              <li>Matérias em discussão nem sempre eram identificadas na transcrição, conforme a fórmula usada pela presidência.</li>
+              <li>Faltava acentuação no título, nos números por extenso e nos avisos de revisão da ata.</li>
+              <li>Um campo em negrito que vinha vazio desfazia a formatação da ata inteira.</li>
+              <li>A linha de assinatura saía sublinhada.</li>
+              <li>Palavras com hífen apareciam com espaço indevido no rascunho da ata.</li>
+            </ul>
+          </div>
+
+        </section>
+
+      </article>
+
+      <article class="release" id="v2-15-0">
+        <header class="release-head">
+          <p class="eyebrow">
+            <span>9 de outubro de 2026</span>
+          </p>
+          <h2 class="versao">Versão <span class="num">2.15.0</span></h2>
+          <dl class="ficha">
+            <div><dt>Painel</dt><dd>v2.15.0</dd></div>
+            <div><dt>Serviço</dt><dd>v0.15.0</dd></div>
+            <div><dt>Itens</dt><dd>5</dd></div>
+          </dl>
+        </header>
+
+        <section class="grupo g-novo">
+          <div class="grupo-titulo">
+            <h3>Novidades</h3><span class="linha"></span><span class="conta">2</span>
+          </div>
+
+          <div class="area">
+            <h4>Parametrização</h4>
+            <ul>
+              <li>Regra de maioria simples configurável por câmara, conforme o regimento: maior resultado entre os presentes ou metade mais um dos presentes.</li>
+              <li>Participação mínima exigida na votação por maioria simples, configurável por câmara.</li>
+            </ul>
+          </div>
+
+        </section>
+
+        <section class="grupo g-melhoria">
+          <div class="grupo-titulo">
+            <h3>Melhorias</h3><span class="linha"></span><span class="conta">2</span>
+          </div>
+
+          <div class="area">
+            <h4>Votação</h4>
+            <ul>
+              <li>A maioria simples passa a considerar a presença da última chamada concluída, e não mais os vereadores conectados ao sistema.</li>
+              <li>A maioria simples passa a exigir uma participação mínima de votos, por padrão um terço dos presentes, para que um único voto não aprove a matéria.</li>
+            </ul>
+          </div>
+
+        </section>
+
+        <section class="grupo g-correcao">
+          <div class="grupo-titulo">
+            <h3>Correções</h3><span class="linha"></span><span class="conta">1</span>
+          </div>
+
+          <div class="area">
+            <h4>Votação</h4>
+            <ul>
+              <li>Matéria aprovada pela maioria dos presentes aparecia como não aprovada no resultado da votação.</li>
+            </ul>
+          </div>
+
+        </section>
+
+      </article>
+
+      <article class="release" id="v2-14-0">
+        <header class="release-head">
+          <p class="eyebrow">
             <span>2 de outubro de 2026</span>
           </p>
           <h2 class="versao">Versão <span class="num">2.14.0</span></h2>
