@@ -463,7 +463,7 @@
   <header class="masthead">
     <p class="produto">SGVP · Sistema de Gestão de Votação e Plenário</p>
     <h1>Notas de Versão</h1>
-    <p class="sub">15 edições publicadas<br>Atualizado em 30 de outubro de 2026</p>
+    <p class="sub">16 edições publicadas<br>Atualizado em 6 de novembro de 2026</p>
   </header>
 
   <div class="layout">
@@ -472,7 +472,13 @@
       <h2>Edições</h2>
       <ol>
         <li>
-          <a href="#servico-0-17-0" aria-current="true">
+          <a href="#v2-17-0" aria-current="true">
+            <span class="v">V. 2.17.0</span>
+            <span class="d">6 nov 2026</span>
+          </a>
+        </li>
+        <li>
+          <a href="#servico-0-17-0">
             <span class="v">Serviço 0.17.0</span>
             <span class="d">30 out 2026</span>
           </a>
@@ -566,10 +572,137 @@
 
     <main>
 
-      <article class="release" id="servico-0-17-0">
+      <article class="release" id="v2-17-0">
         <header class="release-head">
           <p class="eyebrow">
             <span class="selo">Versão vigente</span>
+            <span>6 de novembro de 2026</span>
+          </p>
+          <h2 class="versao">Versão <span class="num">2.17.0</span></h2>
+          <dl class="ficha">
+            <div><dt>Painel</dt><dd>v2.17.0</dd></div>
+            <div><dt>Serviço</dt><dd>v0.18.0</dd></div>
+            <div><dt>Itens</dt><dd>31</dd></div>
+          </dl>
+        </header>
+
+        <section class="grupo g-novo">
+          <div class="grupo-titulo">
+            <h3>Novidades</h3><span class="linha"></span><span class="conta">8</span>
+          </div>
+
+          <div class="area">
+            <h4>Condução da sessão</h4>
+            <ul>
+              <li>Nova tela de condução da sessão para a presidência e o operador, na identidade visual nova: chamada, pauta, discussão, tribuna e votação num só lugar, sem precisar atualizar a página.</li>
+              <li>Votação rápida direto na pauta da tela nova.</li>
+              <li>Botão para encerrar a discussão e já abrir a votação do documento, inclusive em bloco, com confirmação antes.</li>
+              <li>Ordem do dia e roteiro vinculados a cada momento da sessão, com envio do roteiro por momento.</li>
+            </ul>
+          </div>
+
+          <div class="area">
+            <h4>Tribuna</h4>
+            <ul>
+              <li>Pedido de aparte pela tela do vereador: a Mesa aprova no controle da discussão e o painel mostra a foto e o tempo de quem aparteia. Os parâmetros do aparte ficam na tela de configurações.</li>
+              <li>Sinais sonoros distintos para cada evento nas telas de votação, tribuna e painéis, com personalização dos sons.</li>
+            </ul>
+          </div>
+
+          <div class="area">
+            <h4>Documentos</h4>
+            <ul>
+              <li>Pauta da sessão gerada em PDF e em Word a partir dos documentos cadastrados.</li>
+              <li>Leitura de documentos e da pauta por foto na tela de gerenciar sessão, para abastecer a sessão a partir do papel.</li>
+            </ul>
+          </div>
+
+        </section>
+
+        <section class="grupo g-melhoria">
+          <div class="grupo-titulo">
+            <h3>Melhorias</h3><span class="linha"></span><span class="conta">5</span>
+          </div>
+
+          <div class="area">
+            <h4>Chamada e presença</h4>
+            <ul>
+              <li>Conferência da chamada antes de concluir, com aviso ao operador quando o plenário ainda está parcialmente registrado.</li>
+            </ul>
+          </div>
+
+          <div class="area">
+            <h4>Plenário</h4>
+            <ul>
+              <li>Os momentos da sessão passam a seguir a configuração da câmara, e telas antigas de discussão e tribuna que não eram mais usadas foram removidas.</li>
+              <li>Diálogos de confirmação e de aviso no padrão visual novo.</li>
+            </ul>
+          </div>
+
+          <div class="area">
+            <h4>Segurança</h4>
+            <ul>
+              <li>A consulta de usuários deixa de expor senha, certificado digital e sessão ativa. O certificado passa a ser lido por um ponto próprio, só por quem tem autorização.</li>
+              <li>Atualização da plataforma do painel para as versões estáveis mais recentes, com correção de vulnerabilidades em dependências.</li>
+            </ul>
+          </div>
+
+        </section>
+
+        <section class="grupo g-correcao">
+          <div class="grupo-titulo">
+            <h3>Correções</h3><span class="linha"></span><span class="conta">18</span>
+          </div>
+
+          <div class="area">
+            <h4>Votação</h4>
+            <ul>
+              <li>O resultado da votação demorava a aparecer em sessões com plenário cheio. A apuração passa a ser feita numa única consulta.</li>
+              <li>Em empate com o presidente já tendo votado, a votação ficava aguardando um voto de minerva que não cabia. Agora encerra como não aprovada.</li>
+              <li>O voto de minerva podia ser oferecido em documento em que o presidente já havia votado.</li>
+              <li>O botão de votar da presidência não habilitava o voto de minerva.</li>
+            </ul>
+          </div>
+
+          <div class="area">
+            <h4>Tribuna</h4>
+            <ul>
+              <li>O painel da tribuna mostrava 00:00 para quem conectava no meio da fala. O cronômetro passa a ser calculado pelo horário de início.</li>
+              <li>As pausas do orador não eram acumuladas corretamente ao retomar a fala.</li>
+              <li>Limpar o cronômetro não liberava o orador.</li>
+              <li>Um aparte em andamento não era cancelado ao encerrar a discussão ou a tribuna.</li>
+              <li>A pausa do orador durante o aparte se desfazia, e o painel do aparte não cabia na tela.</li>
+            </ul>
+          </div>
+
+          <div class="area">
+            <h4>Sessão</h4>
+            <ul>
+              <li>Duplo clique em avançar momento iniciava e finalizava a etapa no mesmo instante. A proteção vale também para a chamada, a tribuna e o uso em mais de um dispositivo.</li>
+              <li>Iniciar e finalizar a chamada davam erro em sessão com momento definido.</li>
+              <li>Concluir a chamada com o plenário parcialmente registrado invalidava o voto dos ausentes sem nenhum aviso.</li>
+              <li>O campo de senha da confirmação de presença do vereador não aceitava digitação.</li>
+              <li>O botão de iniciar sessão só voltava depois de atualizar a página ao fim da chamada.</li>
+            </ul>
+          </div>
+
+          <div class="area">
+            <h4>Documentos</h4>
+            <ul>
+              <li>Documento de autor ausente já tratado na sessão sumia da pauta, e o filtro de autor ausente tirava o documento da condução.</li>
+              <li>O card da votação por comissão só aparecia depois de atualizar a página.</li>
+              <li>A pauta de um momento podia ser cadastrada em duplicidade.</li>
+              <li>A janela da ata do momento abria com erro.</li>
+            </ul>
+          </div>
+
+        </section>
+
+      </article>
+
+      <article class="release" id="servico-0-17-0">
+        <header class="release-head">
+          <p class="eyebrow">
             <span>30 de outubro de 2026</span>
           </p>
           <h2 class="versao">Serviço <span class="num">0.17.0</span></h2>
